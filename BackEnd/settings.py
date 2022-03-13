@@ -26,8 +26,6 @@ SECRET_KEY = 'django-insecure-mh&2g6cmkse6n%7yrb1x_xq7p+-fw6y+^#e9c&t)gpj@)k=jx8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -57,9 +55,18 @@ MIDDLEWARE = [
     "corsheaders.middleware.CorsPostCsrfMiddleware",
 ]
 
+ALLOWED_HOSTS = [
+    '0.0.0.0'
+    '127.0.0.1',
+    'http://localhost:8080',
+    'https://front-end-horus.vercel.app',
+    'back-horus.herokuapp.com'
+]
+
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:8080',
-    'https://front-end-horus.vercel.app'
+    'https://front-end-horus.vercel.app',
+    'back-horus.herokuapp.com'
 ]
 CORS_ORIGIN_ALLOW_ALL = True   
 CORS_ALLOW_METHODS = [
