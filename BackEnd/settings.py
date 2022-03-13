@@ -55,7 +55,12 @@ MIDDLEWARE = [
     "corsheaders.middleware.CorsPostCsrfMiddleware",
 ]
 
-ALLOWED_HOSTS = ["127.0.0.1", 'http://back-horus.herokuapp.com']
+ALLOWED_HOSTS = [
+    "127.0.0.1", 
+    'http://back-horus.herokuapp.com',
+    'back-horus.herokuapp.com',
+    'https://front-end-horus.vercel.app',
+]
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:8080',
