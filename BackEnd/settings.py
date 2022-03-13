@@ -55,7 +55,7 @@ MIDDLEWARE = [
     "corsheaders.middleware.CorsPostCsrfMiddleware",
 ]
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1", 'http://back-horus.herokuapp.com']
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:8080',
