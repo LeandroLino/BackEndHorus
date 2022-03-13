@@ -1,4 +1,5 @@
 from turtle import pd
+from html5lib import serialize
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -24,9 +25,7 @@ class CreateContact(APIView):
         if not serializer.is_valid():
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-        serialized = serializer.data
-        serialized['id'] = contact.id
-        return Response(serialized, status=status.HTTP_201_CREATED)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
     def put(self, request, contact_id=None):
         contact = Contact.objects.get(id=contact_id)
@@ -55,9 +54,13 @@ class CreateContact(APIView):
 
         return Response({}, status=status.HTTP_200_OK)
 
-    def get(self, request, contact_id=None):
+    def get(self, request):
         contact = Contact.objects.all()
-        return Response([ContactSerializer(cont).data for cont in contact], status=status.HTTP_200_OK)
+        serialized = [ContactSerializer(cont.__dict__).data for cont in contact]
+        for index, cont  in enumerate(contact):
+            serialized[index]["deleted"] = cont.__dict__["deleted"]
+
+        return Response(serialized, status=status.HTTP_200_OK)
 
 
 
