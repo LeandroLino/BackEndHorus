@@ -6,10 +6,16 @@ Após finizalizar o clone do repositório, você ir para a instalação total do
 
 1 - Crie um ambiente virtual dentro do projeto com:
   ```python3 -m venv venv```
+  
+  
 2 - Declare que irá utilizar esse ambiente com:
   ```source venv/bin/active```
+  
+  
 3 - Agora dentro do ambiente será necessário instalar as dependecias, você pode fazer isso utilizando este comando:
   ```pip install -r requirements.txt```
+  
+  
 4 - Agora basta rodar o projeto
   ```python manage.py runserver```
   Antes disso pode ser necessário criar todas as tabelas
