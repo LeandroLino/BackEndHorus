@@ -65,7 +65,7 @@ No Body
 {}
 ```
 
-## GET /api/delete/:id - Listando todos os contatos:
+## GET /api/edit/:id - Listando todos os contatos:
 
 ```
 No Body
